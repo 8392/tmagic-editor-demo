@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/resource/290199744773455872.png" />
+    <link rel="stylesheet" href="/resource/loading.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>“消智云”生态</title>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=qVfKT6jlHWMhriIdhjUwX6rVqRX0fWpG"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="loading-container">
+        <img src="/resource/xzyloading.png" alt="">
+        <!-- <div class="loading-title">消智云生态</div> -->
+      </div>
+      <script>
+        
+        function addThemeColorCssVars() {
+          let defaultConfig = {
+            elColorPrimary: '#167EFF',
+            dwSidebaBg: '#202938'
+          }
+
+          const theme = localStorage.getItem('theme')
+          if (theme) {
+            defaultConfig = JSON.parse(theme)
+          }
+          const cssVars = `--el-color-primary: ${defaultConfig.elColorPrimary}`;
+          document.documentElement.style.cssText = cssVars;
+        }
+
+        addThemeColorCssVars();
+      </script>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
